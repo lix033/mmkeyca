@@ -1,0 +1,31 @@
+plugins {
+
+  id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
+  id 'com.google.gms.google-services' version '4.4.2'
+
+}
+// buildscript {
+//     dependencies {
+//         classpath 'com.google.gms:google-services:4.4.2' // Assurez-vous d'utiliser une version compatible
+//     }
+// }
+// ext.kotlin_version = '1.9.0'
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
