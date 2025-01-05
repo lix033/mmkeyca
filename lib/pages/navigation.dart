@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mykey/add_key.dart';
-import 'package:mykey/list_key.dart';
+import 'package:mykey/pages/add_key.dart';
+import 'package:mykey/pages/list_key.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
